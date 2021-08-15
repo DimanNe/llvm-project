@@ -235,7 +235,7 @@ if(LIBCXX_HEADER_DIR)
   if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC" OR "${CMAKE_CXX_SIMULATE_ID}" STREQUAL "MSVC")
     target_compile_options(cxx-headers INTERFACE /I "${output_dir}")
   else()
-    target_compile_options(cxx-headers INTERFACE -I "${output_dir}")
+    target_compile_options(cxx-headers INTERFACE -isystem "${output_dir}")
   endif()
 
   # Make sure the generated __config_site header is included when we build the library.
